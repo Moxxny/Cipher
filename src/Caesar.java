@@ -7,17 +7,44 @@ public class Caesar {
 		Scanner in = new Scanner(System.in);
 		
 		//Read in message
+	System.out.println("Give me a message");
+		String message = in.nextLine();
 		
 		//Read in shift
-		
-		//Loop through message
-			//if letter is alphabetic
-				//apply shift
-				//if letter is past 'Z'
-					//subtract 26
-			//add letter to output
-		
-		//print output
+	System.out.println("Give me a shift");
+	int shift = in.nextInt();
+	String output = "";
 	
+		//Loop through message
+for (int i = 0; i < message.length(); i++) {
+	char ch = message.charAt(i);
+	
+			//if letter is alphabetic
+	if (Character.isLetter(ch)) {
+				//apply shift
+		char base = 'a';
+		if (Character.isUpperCase(ch)) {
+			base = 'A';
+			
+		}
+		ch = (char)(ch + shift);
+		
+		if (Character.isLowerCase(message.charAt(i))) {
+			if (ch > 'Z') {
+				ch = (char)(ch - 26);
+			}
+			
+		} else {
+			if (ch > 'z') {
+				ch = (char)(ch - 26);
+			}
+		}
 	}
-}
+			//add letter to output
+		output = output + ch;
+	}
+		//print output
+	System.out.println(output);
+	in.close();
+		}
+	}
