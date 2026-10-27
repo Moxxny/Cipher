@@ -30,12 +30,12 @@ for (int i = 0; i < message.length(); i++) {
 		ch = (char)(ch + shift);
 		
 		if (Character.isLowerCase(message.charAt(i))) {
-			if (ch > 'Z') {
+			if (ch > 'z') {
 				ch = (char)(ch - 26);
 			}
 			
 		} else {
-			if (ch > 'z') {
+			if (ch > 'Z') {
 				ch = (char)(ch - 26);
 			}
 		}
